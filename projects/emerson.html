@@ -1,0 +1,136 @@
+  <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Emerson — Assembly Cell Capacity Optimization</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Time study + MOST analysis to reduce cycle time and standardize assembly workflow at Emerson.">
+  <style>
+    :root{--bg:#0b0d10;--text:#e6edf3;--muted:#9aa4b2;--card:#11151a;--accent:#6ee7ff}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1024px;margin:0 auto;padding:16px}
+    .grid{display:grid;gap:16px}
+    .two{grid-template-columns:1fr 1fr}
+    .card{background:var(--card);border:1px solid #1c232b;border-radius:16px;padding:20px;transition:box-shadow .3s,border-color .3s}
+    .card:hover{box-shadow:0 0 15px var(--accent);border-color:var(--accent)}
+    .pill{display:inline-block;background:#0f1720;border:1px solid #1c232b;border-radius:999px;padding:4px 10px;margin:4px 6px 0 0;color:var(--muted);font-size:12px}
+    h1{margin:6px 0 12px}
+    h2{margin:18px 0 6px}
+    h3{margin:12px 0 6px}
+    .kpis{display:flex;gap:12px;flex-wrap:wrap}
+    .kpi{flex:1 1 160px;background:#0f1720;border:1px solid #1c232b;border-radius:12px;padding:14px}
+    .kpi b{font-size:20px;display:block}
+    .muted{color:var(--muted)}
+    ul{margin-top:8px}
+    @media (max-width:820px){.two{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p><a href="../index.html">← Home</a></p>
+    <h1>Emerson — Assembly Cell Capacity Optimization</h1>
+    <p class="muted">Manufacturing operations optimization using Time Study + MOST to cut cycle time, expose bottlenecks, and standardize workflow for butterfly valve assembly.</p>
+
+    <div class="kpis">
+      <div class="kpi"><b>92 s → 79.56 s</b><span class="muted">Cycle time (baseline vs MOST)</span></div>
+      <div class="kpi"><b>−13.44 s</b><span class="muted">Per-unit reduction (analyzed subsection)</span></div>
+      <div class="kpi"><b>Cell 2</b><span class="muted">Focus area (assembly)</span></div>
+      <div class="kpi"><b>MOST + PERT</b><span class="muted">Methods</span></div>
+    </div>
+
+    <section class="grid two">
+      <div class="card">
+        <h2>Context & Role</h2>
+        <p>Internship at Emerson Process Management (India) Pvt. Ltd., Badhalawadi (Pune) — supervised by Shitalkumar Kamte (Production Manager) with academic guidance from Prof. A. K. Kashyap. Project title: <em>Assembly Cell Capacity Optimization</em>. :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1}</p>
+        <p>Work centered on the assembly of isolation/butterfly valves and cross-department exposure (manufacturing, QA, safety, HR). :contentReference[oaicite:2]{index=2}</p>
+        <div>
+          <span class="pill">Time Study</span>
+          <span class="pill">MOST (PMTS)</span>
+          <span class="pill">PERT</span>
+          <span class="pill">Lean (Kaizen/Gemba)</span>
+          <span class="pill">Excel</span>
+          <span class="pill">AutoCAD</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Problem</h2>
+        <p>Non-standardized workflow and NVA motions increased lead time, fatigue, and costs; need a systematic method to expose bottlenecks and standardize processes across cells. :contentReference[oaicite:3]{index=3}</p>
+        <p>Approach: Implement MOST to quantify motion/time, remove NVA, reduce cycle time, and create a replicable model. :contentReference[oaicite:4]{index=4}</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Objectives</h2>
+      <ul>
+        <li>Identify and eliminate bottlenecks; group similar activities to reduce motion/fatigue. :contentReference[oaicite:5]{index=5}</li>
+        <li>Optimize testing phase to minimize idle time. :contentReference[oaicite:6]{index=6}</li>
+        <li>Measure productivity improvements; standardize for replication across cells. :contentReference[oaicite:7]{index=7}</li>
+      </ul>
+    </section>
+
+    <section class="grid two">
+      <div class="card">
+        <h2>Methodology</h2>
+        <ol>
+          <li>Study cell layout & current flow (Cell 2). :contentReference[oaicite:8]{index=8}</li>
+          <li>Time Study: stopwatch + motion breakdown. :contentReference[oaicite:9]{index=9}</li>
+          <li>MOST: encode motions (TMU), compute time. (1 TMU = 0.036 s). :contentReference[oaicite:10]{index=10}</li>
+          <li>PERT: visualize tasks and identify critical waits. :contentReference[oaicite:11]{index=11}</li>
+        </ol>
+        <p class="muted">MOST sequences: General Move, Controlled Move, Tool Use; assign indices → TMU → seconds. :contentReference[oaicite:12]{index=12} :contentReference[oaicite:13]{index=13}</p>
+      </div>
+
+      <div class="card">
+        <h2>Results (subprocess)</h2>
+        <ul>
+          <li>Time Study: <b>92 s</b> (baseline). :contentReference[oaicite:14]{index=14}</li>
+          <li>MOST: <b>79.56 s</b> (TMU 2210 × 0.036 s). :contentReference[oaicite:15]{index=15}</li>
+          <li>Δ = <b>−13.44 s</b> per unit; exposes inefficiencies & motion waste. :contentReference[oaicite:16]{index=16}</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Key Bottlenecks → Fixes</h2>
+      <ul>
+        <li><b>Testing waits</b> → Stagger batches to overlap test cycles, reduce idle time. :contentReference[oaicite:17]{index=17}</li>
+        <li><b>Task grouping</b> → Batch screwing then power-fasten; cut repetition/fatigue. :contentReference[oaicite:18]{index=18}</li>
+        <li><b>Alignment time</b> → Add detachable guiding protrusions for heavy parts. :contentReference[oaicite:19]{index=19}</li>
+        <li><b>Height mismatches</b> → Standardize table heights; reduce crane moves. :contentReference[oaicite:20]{index=20}</li>
+        <li><b>Manual clamp</b> → Use powered tool to cut clamp time. :contentReference[oaicite:21]{index=21}</li>
+      </ul>
+    </section>
+
+    <section class="grid two">
+      <div class="card">
+        <h2>Representative Step Breakdown</h2>
+        <p class="muted">Example steps from baseline study (8″ valve): load, press bearings ×3, move to assembly, clamp. :contentReference[oaicite:22]{index=22} :contentReference[oaicite:23]{index=23}</p>
+        <ul>
+          <li>Load to press trolley (19 s). :contentReference[oaicite:24]{index=24}</li>
+          <li>Press bearings (3 × 11 s actions + setup). :contentReference[oaicite:25]{index=25}</li>
+          <li>Transfer + clamp (24 s total segment). :contentReference[oaicite:26]{index=26}</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Tools & Artefacts</h2>
+        <ul>
+          <li>Stopwatch, video, MOST charts, data forms, measuring tools, Excel, AutoCAD. :contentReference[oaicite:27]{index=27}</li>
+          <li>Standards & lean practices referenced (Kaizen, Gemba). :contentReference[oaicite:28]{index=28}</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Future Scope</h2>
+      <ul>
+        <li>ML-assisted line balancing; predictive scheduling from MOST data.</li>
+        <li>Automation/robotics for repetitive stations; ergonomic improvements.</li>
+        <li>Industry 4.0 (IoT, digital twins), sustainability (waste/energy/water). :contentReference[oaicite:29]{index=29}</li>
+      </ul>
+    </section
