@@ -9,94 +9,76 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg:#0b0d10;
-      --text:#e6edf3;
-      --muted:#9aa4b2;
-      --card:#11151a;
-      --accent:#6ee7ff;
+    :root{
+      --bg:#0b0d10; --text:#e6edf3; --muted:#9aa4b2;
+      --card:#11151a; --accent:#6ee7ff;
     }
-    * { box-sizing:border-box }
-    body {
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      line-height:1.6
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui;-webkit-font-smoothing:antialiased}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:10;background:rgba(11,13,16,.85);backdrop-filter:blur(8px);border-bottom:1px solid #1c232b}
+    .wrap{max-width:1024px;margin:0 auto;padding:14px 16px}
+    .navbar{display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:800;font-size:20px;letter-spacing:.2px}
+    .nav{display:flex;align-items:center;gap:24px}
+    .nav a{font-weight:600}
+
+    /* Contact dropdown */
+    .dropdown{position:relative}
+    .dropdown > a{display:inline-flex;align-items:center;gap:6px}
+    .dropdown-menu{
+      position:absolute;top:130%;right:0;min-width:260px;
+      background:var(--card);border:1px solid #1c232b;border-radius:12px;
+      box-shadow:0 8px 24px rgba(0,0,0,.35);padding:8px;display:none
     }
-    a { color:var(--accent); text-decoration:none }
-    a:hover { text-decoration:underline }
-    header {
-      position:sticky;
-      top:0;
-      background:rgba(11,13,16,.75);
-      backdrop-filter: blur(8px);
-      border-bottom:1px solid #1c232b
+    .dropdown-menu a{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:8px}
+    .dropdown-menu a:hover{background:#0f1720}
+    .dropdown:hover .dropdown-menu{display:block}
+
+    /* Layout + cards */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center;padding:32px 0}
+    .hero h1{font-size:40px;line-height:1.1;margin:0}
+    .badge{display:inline-block;padding:4px 10px;border:1px solid #24303a;border-radius:999px;color:var(--muted);font-size:12px;margin-bottom:12px}
+    .pill{display:inline-block;background:#0f1720;border:1px solid #1c232b;border-radius:999px;padding:4px 10px;margin:4px 6px 0 0;color:var(--muted);font-size:12px}
+
+    .card{
+      background:var(--card);border:1px solid #1c232b;border-radius:16px;
+      padding:20px;transition:all .2s
     }
-    .wrap { max-width:1024px; margin:0 auto; padding:16px }
-    .hero {
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:20px;
-      align-items:center;
-      padding:32px 0
-    }
-    .hero h1 { font-size:40px; line-height:1.1; margin:0 }
-    .badge {
-      display:inline-block;
-      padding:4px 10px;
-      border:1px solid #24303a;
-      border-radius:999px;
-      color:var(--muted);
-      font-size:12px;
-      margin-bottom:12px
-    }
-    .card {
-      background:var(--card);
-      border:1px solid #1c232b;
-      border-radius:16px;
-      padding:20px;
-      transition: box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-    .card:hover {
-      box-shadow: 0 0 15px var(--accent);
-      border-color: var(--accent);
-    }
-    .grid { display:grid; gap:16px }
-    .projects {
-      grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-      padding-bottom:40px
-    }
-    .pill {
-      display:inline-block;
-      background:#0f1720;
-      border:1px solid #1c232b;
-      border-radius:999px;
-      padding:4px 10px;
-      margin:4px 6px 0 0;
-      color:var(--muted);
-      font-size:12px
-    }
-    footer {
-      border-top:1px solid #1c232b;
-      color:var(--muted);
-      font-size:14px
-    }
+    .card:hover{border-color:var(--accent);box-shadow:0 0 12px rgba(110,231,255,.5);transform:translateY(-2px)}
+
+    .grid{display:grid;gap:16px}
+    .projects{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));padding-bottom:40px}
+
+    footer{border-top:1px solid #1c232b;color:var(--muted);font-size:14px}
+
     @media (max-width:820px){
-      .hero { grid-template-columns:1fr }
-      .hide-on-mobile { display:none }
+      .hero{grid-template-columns:1fr}
+      .hide-on-mobile{display:none}
+      .nav{gap:16px}
     }
   </style>
 </head>
 <body>
 <header>
-  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;">
-    <strong>Rajat Gupta</strong>
-    <nav style="display:flex;gap:16px">
+  <div class="wrap navbar">
+    <div class="brand">Rajat Gupta</div>
+    <nav class="nav">
       <a href="index.html">Home</a>
-      <a href="projects/projects.html">Projects</a>
-      <a href="mailto:rajat@example.com">Contact</a>
-      <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a href="projects/index.html">Projects</a>
+
+      <div class="dropdown">
+        <a href="#" onclick="return false;">Contact ▾</a>
+        <div class="dropdown-menu">
+          <a href="mailto:rajat@example.com">📧 Email — rajat@example.com</a>
+          <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener">🔗 LinkedIn — /in/your-linkedin</a>
+        </div>
+      </div>
+
+      <a href="resume.html">Resume</a>
     </nav>
   </div>
 </header>
@@ -111,34 +93,51 @@
         <span class="pill">CAD</span><span class="pill">Controls</span><span class="pill">OpenCV</span><span class="pill">Ardu/INAV</span><span class="pill">FEA</span>
       </div>
     </div>
-    <a href="projects/drone.html" style="text-decoration:none; color:inherit;">
-      <div class="card" style="cursor:pointer;">
+
+    <!-- Full-card clickable flagship -->
+    <a href="projects/drone.html" style="text-decoration:none;color:inherit;display:block">
+      <div class="card" style="cursor:pointer">
         <h3>Autonomous Attack UAV (In Progress)</h3>
-        <p>Full-stack autonomous quadrotor with onboard vision system for real-time target lock and sub-15 cm delivery accuracy.</p>
+        <p>Full-stack autonomous quadrotor with onboard vision for real-time target lock and sub-15 cm delivery accuracy.</p>
       </div>
     </a>
   </section>
 
   <section class="grid projects">
-    <article class="card">
-      <h4>Copra Desheller</h4>
-      <p>High-efficiency coconut processing machine with redesigned shell-removal mechanism. Built for low-income farmers — low budget, easy to scale. <a href="projects/copra-desheller.html">Case study</a></p>
-    </article>
+    <a href="projects/copra-desheller.html" style="text-decoration:none;color:inherit">
+      <article class="card" style="cursor:pointer">
+        <h4 style="margin-top:0">Copra Desheller</h4>
+        <p>Low-budget, scalable coconut desheller for smallholder farmers; throughput and ergonomics focused. <span style="text-decoration:underline">Case study</span></p>
+      </article>
+    </a>
 
-    <article class="card">
-      <h4>EM Launcher + Glider Payload Delivery</h4>
-      <p>Compact bench-scale electromagnetic launcher with capacitor bank, current monitoring, and safety interlocks. No propulsion — payload delivered via glider drop in a GPS-defined radius. <a href="projects/em-launcher.html">Preview</a></p>
-    </article>
+    <a href="projects/em-launcher.html" style="text-decoration:none;color:inherit">
+      <article class="card" style="cursor:pointer">
+        <h4 style="margin-top:0">EM Launcher + Glider Payload Delivery</h4>
+        <p>Bench-scale pulse-power launcher with safety interlocks; GPS-radius glide drop, no propulsion. <span style="text-decoration:underline">Preview</span></p>
+      </article>
+    </a>
 
-    <article class="card">
-      <h4>Emerson Operations optimization</h4>
-      <p>Manufacturing operations optimization — streamlined workflows, reduced downtime, and implemented process automation for increased production efficiency. <a href="projects/emerson.html">Read more</a></p>
-    </article>
+    <a href="projects/solar-cooling.html" style="text-decoration:none;color:inherit">
+      <article class="card" style="cursor:pointer">
+        <h4 style="margin-top:0">Solar Panel Cooling — Efficiency Improvement</h4>
+        <p>Passive/active cooling experiments; measured wattage gain and retrofit kit concept. <span style="text-decoration:underline">Read more</span></p>
+      </article>
+    </a>
 
-    <article class="card">
-      <h4>Other Projects</h4>
-      <p>Range of mechanical prototypes including stabilization rigs, mechatronic control spikes, and functional CAD studies for manufacturing and defense applications. <a href="projects/other.html">Browse</a></p>
-    </article>
+    <a href="projects/emerson.html" style="text-decoration:none;color:inherit">
+      <article class="card" style="cursor:pointer">
+        <h4 style="margin-top:0">Emerson — Assembly Cell Capacity Optimization</h4>
+        <p>Time Study + MOST; standardized work; conservative ROI modeling from cycle-time deltas. <span style="text-decoration:underline">Read more</span></p>
+      </article>
+    </a>
+
+    <a href="projects/other.html" style="text-decoration:none;color:inherit">
+      <article class="card" style="cursor:pointer">
+        <h4 style="margin-top:0">Other Projects</h4>
+        <p>Stabilization rigs, control spikes, and quick-turn mechanisms. <span style="text-decoration:underline">Browse</span></p>
+      </article>
+    </a>
   </section>
 </main>
 
