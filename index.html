@@ -33,7 +33,7 @@
     <strong>Rajat Gupta</strong>
     <nav style="display:flex;gap:16px">
       <a href="index.html">Home</a>
-      <a href="projects/projects.html">Projects</a>
+      <a href="projects/index.html">Projects</a>
       <a href="mailto:rajat@example.com">Contact</a>
       <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
     </nav>
@@ -50,33 +50,44 @@
         <span class="pill">CAD</span><span class="pill">Controls</span><span class="pill">OpenCV</span><span class="pill">Ardu/INAV</span><span class="pill">FEA</span>
       </div>
     </div>
-    <div class="card">
-      <h3 style="margin-top:0">Autonomous UAV(in progress)h3>
-      <p><strong>Vision-Guided Payload Delivery UAV</strong>: target lock & timed drop. Goal: CEP ≤ 15 cm @ ≤ 3 m altitude.</p>
-      <a href="projects/drone.html">View project →</a>
-    </div>
+
+    <!-- Full-card clickable flagship -->
+    <a href="projects/drone.html" style="text-decoration:none;color:inherit;display:block">
+      <div class="card" style="cursor:pointer">
+        <h3>Flagship (In Progress)</h3>
+        <p>Vision-Guided Payload Delivery UAV: target lock & timed drop. Goal: CEP ≤ 15 cm @ ≤ 3 m altitude.</p>
+      </div>
+    </a>
   </section>
 
   <section class="grid projects">
-    <article class="card">
-      <h4 style="margin-top:0">Copra Desheller</h4>
-      <p>Mechanized agricultural system redesign. <a href="projects/copra-desheller.html">Case study</a></p>
-    </article>
+    <a href="projects/copra-desheller.html" style="text-decoration:none;color:inherit">
+      <article class="card" style="cursor:pointer">
+        <h4 style="margin-top:0">Copra Desheller</h4>
+        <p>Mechanized agricultural system redesign. <span style="text-decoration:underline">Case study</span></p>
+      </article>
+    </a>
 
-    <article class="card">
-      <h4 style="margin-top:0">EM Launcher (Bench)</h4>
-      <p>Pulse-power prototype; safety interlocks; sled launch ≥ 1 m. <a href="projects/em-launcher.html">Preview</a></p>
-    </article>
+    <a href="projects/em-launcher.html" style="text-decoration:none;color:inherit">
+      <article class="card" style="cursor:pointer">
+        <h4 style="margin-top:0">EM Launcher (Bench)</h4>
+        <p>Pulse-power prototype; safety interlocks; sled launch ≥ 1 m. <span style="text-decoration:underline">Preview</span></p>
+      </article>
+    </a>
 
-    <article class="card">
-      <h4 style="margin-top:0">Hyperloop / Maglev — Manipal</h4>
-      <p>Coil fixtures, current/thermal monitoring, static firing tests. <a href="projects/hyperloop.html">Project notes</a></p>
-    </article>
+    <a href="projects/hyperloop.html" style="text-decoration:none;color:inherit">
+      <article class="card" style="cursor:pointer">
+        <h4 style="margin-top:0">Hyperloop / Maglev — Manipal</h4>
+        <p>Coil fixtures, current/thermal monitoring, static firing tests. <span style="text-decoration:underline">Project notes</span></p>
+      </article>
+    </a>
 
-    <article class="card">
-      <h4 style="margin-top:0">Other Projects</h4>
-      <p>Assorted mechanisms, controls spikes, and prototypes. <a href="projects/other.html">Browse</a></p>
-    </article>
+    <a href="projects/other.html" style="text-decoration:none;color:inherit">
+      <article class="card" style="cursor:pointer">
+        <h4 style="margin-top:0">Other Projects</h4>
+        <p>Assorted mechanisms, controls spikes, and prototypes. <span style="text-decoration:underline">Browse</span></p>
+      </article>
+    </a>
   </section>
 </main>
 
